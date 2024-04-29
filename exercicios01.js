@@ -2,7 +2,7 @@
  1. Escreva um algoritmo para ler uma temperatura em graus Celsius, calcular e escrever o
      valor correspondente em graus Fahrenheit. 
 */
-const prompt = require('prompt-sync')();
+var prompt = require('prompt-sync')();
 var celsius = prompt("Graus Celsius: ");
 celsius = parseFloat(celsius); 
 console.log("Temperatura em Fahrenheit:", celsius*1.8 + 32);
@@ -14,7 +14,7 @@ console.log("Temperatura em Fahrenheit:", celsius*1.8 + 32);
     em relação ao total de eleitores.
 */
 
-// const prompt = require('prompt-sync')();
+var prompt = require('prompt-sync')();
 var eleitores = parseFloat(prompt("Número eleitores: "));
 var v_brancos = parseFloat(prompt("Votos brancos: "));
 var v_nulos = parseFloat(prompt("Votos nulos: "));
@@ -33,7 +33,7 @@ console.log("Porcentcual votos validos:", (v_validos/eleitores)* 100 + "%");
     dos primeiros três inteiros.
 */
 
-// const prompt = require('prompt-sync')();
+var prompt = require('prompt-sync')();
 var n1 = parseInt(prompt("Inteiro 1: "));
 var n2 = parseInt(prompt("Inteiro 2: "));
 var n3 = parseInt(prompt("Inteiro 3: "));
@@ -82,7 +82,7 @@ if (media >= 6) {
 
 */
 
-// const prompt = require('prompt-sync')();
+var prompt = require('prompt-sync')();
 let A = parseFloat(prompt("Lado A: "));
 let B = parseFloat(prompt("Lado B: "));
 let C = parseFloat(prompt("Lado C: "));
@@ -102,7 +102,7 @@ if (A < B + C && B < A + C && C < A + B) {
     compradas, calcule e escreva o valor total da compra.
 */
 
-// const prompt = require('prompt-sync')();
+var prompt = require('prompt-sync')();
 let quantidade_macas = parseInt(prompt("Quantidade de maçãs: "));
 let preco_maca;
 
@@ -116,7 +116,7 @@ console.log("O valor total da compra é: ", preco_maca*quantidade_macas)
   8. Escreva um algoritmo para ler 2 valores (considere que não serão lidos valores iguais)
     e escreve-los em ordem crescente.
 */
-// const prompt = require('prompt-sync')();
+var prompt = require('prompt-sync')();
 let val1 = parseFloat(prompt("Valor 1: "));
 let val2 = parseFloat(prompt("Valor 2: "));
 
@@ -125,15 +125,27 @@ else {console.log(val2, val1)}
 
   
 /*
-    9. 
+    9. Escreva um algoritmo que leia o código de origem de um produto e imprima a região
+do mesmo.
 */
+var prompt = require('prompt-sync')();
+let codigo =  parseInt(prompt("Insira o código de origem: "));
 
+if (codigo==1 ) {console.log("Região Sul");}
+else if (codigo == 2 ) {console.log("Região Norte");}
+else if (codigo == 3 ) {console.log("Região Leste");}
+else if (codigo == 4) {console.log("Região Oeste");}
+else if ( 5 <= codigo && codigo <= 6) {console.log("Região Nordeste");}
+else if (7 <= codigo && codigo<= 9 ) {console.log("Região Sudeste");}
+else if (10 <= codigo && codigo <= 20 ) {console.log("Região Centro-Oeste");}
+else if (25 <= codigo && codigo <= 50 ) {console.log("Região Nordeste");}
+else {console.log("Produto importado");}
 
 
 /*
   10. Escreva um algoritmo para ler um número inteiro e escrevê-lo na tela 10 vezes.
 */
-// const prompt = require('prompt-sync')();
+var prompt = require('prompt-sync')();
 let num =  parseInt(prompt("Insira número inteiro: "));
 for (let i = 1; i <= 10; i ++) {
   console.log(num);
@@ -141,9 +153,20 @@ for (let i = 1; i <= 10; i ++) {
 
 
 /*
-  11. 
+  11. Escreva um algoritmo para ler uma quantidade indeterminada de valores inteiros. Para
+    cada valor fornecido escrever uma mensagem que indica se cada valor fornecido é PAR
+    ou ÍMPAR. O algoritmo será encerrado imediatamente após a leitura de um valor NULO ou
+    NEGATIVO.
 */
 
+var prompt = require('prompt-sync')();
+let nn;
+nn =  parseInt(prompt("Insira valor inteiro: "));
+while (nn >= 0 ){
+  if (nn%2 == 0) { console.log("PAR");}
+  else if (nn%2 == 1) {console.log("IMPAR");}
+  nn =  parseInt(prompt("Insira valor inteiro: "));
+}
 
 
 /*
@@ -151,22 +174,29 @@ for (let i = 1; i <= 10; i ++) {
     divididos por 11, dão resto igual a 5.
 */
 
-for (i = 1000; i<= 1999; i++) {
+for (let i = 1000; i<= 1999; i++) {
   if (i % 11 == 5) {console.log(i)}
 }
 
 
 /*
-  13.
+  13.  Escrever um algoritmo que leia 5 valores para uma variável N e, para cada um deles,
+    calcule e mostre a tabuada de 1 até N.
 */
-
-
+var prompt = require('prompt-sync')();
+let N;
+for (let i = 1; i<= 5; i++) {
+  N =  parseInt(prompt("Tabuada do: "));
+  for (let j = 1; j<= N; j++) {
+    console.log(`${j} * ${N} = ${j * N}`)
+  }
+}
 
 /*
   14. Fazer um algoritmo para receber números decimais até que o usuário digite 0 e fazer
     a média aritmética desses números.
 */
-
+var prompt = require('prompt-sync')();
 let soma = 0;
 let contador = 0;
 let n;
@@ -185,7 +215,7 @@ if (contador > 0) {console.log("Média dos numeros: ", soma/contador)}
     que o usuário digite o número 0. Fazer a média ponderada desses números e pesos
     respectivos.
 */
-
+var prompt = require('prompt-sync')();
 let soma_ = 0;
 let soma_pesos = 0;
 let con = 0;
